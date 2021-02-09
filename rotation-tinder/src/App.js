@@ -2,10 +2,14 @@ import './App.css';
 import React, {useState} from 'react';
 import SwipeyBoi from "./SwipeyBoi";
 import {SiAwesomelists, GiCrownedHeart} from "react-icons/all";
+import {BottomNavigation, BottomNavigationAction} from "@material-ui/core";
+import RecentActorsIcon from '@material-ui/icons/RecentActors';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 
 
 
 const App = () => {
+
 
     const [allTeams, setAllTeams] = useState([
         {
@@ -21,26 +25,27 @@ const App = () => {
         []
     );
 
-    const [currentlySwiping, setCurrentlySwiping] = useState(
-        false
+    const [currentlySelected, setCurrentlySelected] = useState(
+        "search"
     );
 
-    const swipeButtonClicked = () => {
-        setCurrentlySwiping(true)
-    };
+    const handleChange = (e, newValue) => {
+        setCurrentlySelected(newValue)
 
-    const listButtonClicked = () => {
-        setCurrentlySwiping(false)
-    };
+    }
 
     const bottomNavigation = (
         <div>
-            <SiAwesomelists onClick={swipeButtonClicked} />
-            <GiCrownedHeart onClick={listButtonClicked} />
+{/*         <SiAwesomelists onClick={swipeButtonClicked} />
+            <GiCrownedHeart onClick={listButtonClicked} />*/}
+            <BottomNavigation value={currentlySelected} onChange={handleChange} >
+                <BottomNavigationAction label="Search" value="search" icon={<RecentActorsIcon />} />
+                <BottomNavigationAction label="Shortlist" value="shortlist" icon={<FavoriteIcon />} />
+            </BottomNavigation>
         </div>
     );
 
-    if (currentlySwiping) {
+    if (currentlySelected === "search") {
         return (
             <div>
                 <div>
