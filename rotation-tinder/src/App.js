@@ -1,25 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useState} from 'react';
+import SwipeyBoi from "./SwipeyBoi";
 
-function App() {
+
+const App = () => {
+
+    const [allTeams, setAllTeams] = useState([
+        {
+            name: "Leah"
+        },
+        {
+            name: "Braden"
+        }
+        ]
+    );
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div>
+          <button className="button">Add team</button>
+          <SwipeyBoi allTeams={allTeams}/>
+      </div>
   );
-}
+};
 
 export default App;
