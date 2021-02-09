@@ -1,6 +1,8 @@
 import './App.css';
 import React, {useState} from 'react';
 import SwipeyBoi from "./SwipeyBoi";
+import {SiAwesomelists, GiCrownedHeart} from "react-icons/all";
+
 
 
 const App = () => {
@@ -21,28 +23,27 @@ const App = () => {
 
     const [currentlySwiping, setCurrentlySwiping] = useState(
         false
-    )
+    );
 
     const swipeButtonClicked = () => {
         setCurrentlySwiping(true)
-    }
+    };
 
     const listButtonClicked = () => {
         setCurrentlySwiping(false)
-    }
+    };
 
     const bottomNavigation = (
         <div>
-            <button onClick={swipeButtonClicked}> Swiping </button>
-            <button onClick={listButtonClicked}> List </button>
+            <SiAwesomelists onClick={swipeButtonClicked} />
+            <GiCrownedHeart onClick={listButtonClicked} />
         </div>
-    )
+    );
 
     if (currentlySwiping) {
         return (
             <div>
                 <div>
-                    <button className="button">Add team</button>
                     <SwipeyBoi allTeams={allTeams}/>
                 </div>
                 {bottomNavigation}
@@ -54,7 +55,6 @@ const App = () => {
         return (
             <div>
                 <div>
-                    <button className="button">Add team</button>
                     <div> hosiahpisahsc </div>
                 </div>
                 {bottomNavigation}
@@ -66,3 +66,7 @@ const App = () => {
 };
 
 export default App;
+
+
+
+
