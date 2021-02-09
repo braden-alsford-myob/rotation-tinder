@@ -2,7 +2,7 @@ export const data = [
     {
         id: 1,
         image:
-            "https://avataaars.io/?avatarStyle=Transparent&topType=LongHairStraight2&accessoriesType=Blank&hairColor=Black&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=PastelGreen&graphicType=Diamond&eyeType=Happy&eyebrowType=RaisedExcitedNatural&mouthType=Twinkle&skinColor=Pale",
+            "https://images.idgesg.net/images/article/2018/07/diverse_teamwork_group_meeting_by_rawpixel_cc0_via_unsplash_1200x800-100763372-large.jpg",
         teamName: "Unicorn",
         stack: ["React", "C#"],
         description: "Our team consists of 2 senior devs, a BA and a QA",
@@ -29,7 +29,7 @@ export const data = [
     {
         id: 2,
         image:
-            "https://avataaars.io/?avatarStyle=Transparent&topType=LongHairStraight2&accessoriesType=Blank&hairColor=Black&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=PastelGreen&graphicType=Diamond&eyeType=Happy&eyebrowType=RaisedExcitedNatural&mouthType=Twinkle&skinColor=Pale",
+            "https://images.idgesg.net/images/article/2018/07/diverse_teamwork_group_meeting_by_rawpixel_cc0_via_unsplash_1200x800-100763372-large.jpg",
         teamName: "Area51",
         stack: ["React", "C#"],
         description: "Our team consists of 2 senior devs, a BA and a QA",
@@ -56,7 +56,7 @@ export const data = [
     {
         id: 3,
         image:
-            "https://avataaars.io/?avatarStyle=Transparent&topType=LongHairStraight2&accessoriesType=Blank&hairColor=Black&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=PastelGreen&graphicType=Diamond&eyeType=Happy&eyebrowType=RaisedExcitedNatural&mouthType=Twinkle&skinColor=Pale",
+            "https://images.idgesg.net/images/article/2018/07/diverse_teamwork_group_meeting_by_rawpixel_cc0_via_unsplash_1200x800-100763372-large.jpg",
         teamName: "BiFrost",
         stack: ["React", "C#"],
         description: "Our team consists of 2 senior devs, a BA and a QA",
