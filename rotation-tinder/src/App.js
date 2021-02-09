@@ -1,6 +1,7 @@
 import './App.css';
 import React, {useState} from 'react';
 import SwipeyBoi from "./SwipeyBoi";
+import ShortListView from "./ShortListView";
 
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
       <div>
           <button className="button">Add team</button>
           <SwipeyBoi allTeams={allTeams}/>
+          <ShortListView/>
       </div>
   );
 };

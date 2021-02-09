@@ -15,8 +15,6 @@ import { data } from './dummyData';
 import EmailIcon from '@material-ui/icons/Email';
 import slack from './slack.svg';
 
-const entry = data[0];
-
 const useStyles = makeStyles((theme) => ({
     root: {
         maxWidth: 345,
@@ -42,8 +40,9 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function TeamCard() {
+export default function TeamCard(props) {
     const classes = useStyles();
+    const entry = props.entry;
     const [expanded, setExpanded] = React.useState(false);
 
     const handleExpandClick = () => {
@@ -59,7 +58,7 @@ export default function TeamCard() {
             <CardMedia
                 className={classes.media}
                 image={entry.image}
-                title="Paella dish"
+                title={entry.teamName}
             />
             <CardActions disableSpacing>
                 <IconButton aria-label="add to favorites">
