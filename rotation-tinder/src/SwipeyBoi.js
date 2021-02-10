@@ -1,6 +1,7 @@
 import './SwipeyBoi.css';
 import React, {useState} from 'react';
 import TinderCard from 'react-tinder-card'
+import Confetti from 'react-dom-confetti';
 
 
 const data = [
@@ -81,9 +82,28 @@ const data = [
 
 const SwipeyBoi = (props) => {
 
+    const config = {
+        angle: 90,
+        spread: 360,
+        startVelocity: 40,
+        elementCount: 500,
+        dragFriction: 0.12,
+        duration: 3000,
+        stagger: 3,
+        width: "28px",
+        height: "29px",
+        perspective: "623px",
+        colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"]
+    };
+
+    const [confetti, setConfetti] = useState(false)
 
     const swiped = (direction, team) => {
         console.log('removing: ' + team)
+        if (direction == "right") {
+            setConfetti(true);
+            setConfetti(false);
+        }
     };
 
     const outOfFrame = (name) => {
@@ -96,6 +116,7 @@ const SwipeyBoi = (props) => {
             <link href='https://fonts.googleapis.com/css?family=Alatsi&display=swap' rel='stylesheet' />
 
             <h1>Bianca presents: FMA Rotation Tinder</h1>
+            <Confetti active={ confetti } config={ config }/>
 
             <div className='cardContainer'>
                 {data.map((team) =>
