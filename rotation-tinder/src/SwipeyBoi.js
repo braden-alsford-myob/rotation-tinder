@@ -2,6 +2,7 @@ import './SwipeyBoi.css';
 import React, {useState} from 'react';
 import TinderCard from 'react-tinder-card'
 import Confetti from 'react-dom-confetti';
+import DetailCard from "./DetailCard";
 
 
 const SwipeyBoi = (props) => {
@@ -50,9 +51,10 @@ const SwipeyBoi = (props) => {
             <div className='cardContainer'>
                 {props.allTeams.map((team) =>
                     <TinderCard preventSwipe={['up', 'down']} className='swipe' key={team.teamName} onSwipe={(dir) => swiped(dir, team)} onCardLeftScreen={() => outOfFrame(team.teamName)}>
-                        <div style={{ backgroundImage: 'url(' + team.image + ')' }} className='card'>
-                            <h3 style={{color: "black"}}>{team.teamName}</h3>
-                        </div>
+                        {/*<div style={{ backgroundImage: 'url(' + team.image + ')' }} className='card'>*/}
+                        {/*    <h3 style={{color: "black"}}>{team.teamName}</h3>*/}
+                        {/*</div>*/}
+                        <DetailCard team={team} />
                     </TinderCard>
                 )}
             </div>
