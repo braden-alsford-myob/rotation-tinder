@@ -5,21 +5,12 @@ import {SiAwesomelists, GiCrownedHeart} from "react-icons/all";
 import {BottomNavigation, BottomNavigationAction} from "@material-ui/core";
 import RecentActorsIcon from '@material-ui/icons/RecentActors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-
-
+import {data} from "./dummyData.js";
 
 const App = () => {
 
 
-    const [allTeams, setAllTeams] = useState([
-        {
-            name: "Leah"
-        },
-        {
-            name: "Braden"
-        }
-        ]
-    );
+    const [allTeams, setAllTeams] = useState(data);
 
     const [shortList, setShortList] = useState(
         []
