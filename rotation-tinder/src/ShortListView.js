@@ -1,14 +1,13 @@
 import './App.css';
 import TeamCard from "./card";
+import { data } from "./dummyData";
 
 function ShortListView() {
     return (
-        <div className="App">
-            <header className="App-header">
-                <TeamCard />
-                <TeamCard />
-                <TeamCard />
-            </header>
+        <div className="Short-list-page">
+                { data.map((entryData) => {
+                    return <TeamCard entry={entryData}/>;
+                }) }
         </div>
     );
 }

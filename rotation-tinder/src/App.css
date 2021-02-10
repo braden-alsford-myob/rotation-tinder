@@ -1,5 +1,27 @@
-.App {
-  text-align: center;
+.Short-list-page {
+  text-align: left;
+}
+
+/*.outer {
+    background-color: lightblue;
+}*/
+
+html {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .App-logo {
@@ -13,7 +35,7 @@
   }
 }
 
-.App-header {
+.Short-list-entries {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -42,20 +64,39 @@ button {
 
 }
 .navbar {
-    border: 10px solid pink;
+    /*border: 10px solid pink;*/
+    background-color: white;
     border-radius: 20px;
     position: fixed;
     bottom: 10px;
     width: 60%;
-    left: 19%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 17.5%;
 }
 
 .contentContainer {
-    border: 10px solid pink;
-    border-radius: 20px;
+    /*border: 10px solid rgba(255, 192, 203, 0.6);*/
+    border-radius: 5px;
     height: calc(100vh - 113px);
-    width: 60%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    width: 95%;
+    display: flex;
+    margin: 5px auto;
+    overflow: scroll;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.contentContainer::-webkit-scrollbar {
+    display: none;
+    width: 0;
+}
+
+.Short-list-page::-webkit-scrollbar {
+    display: none;
+    width: 0;
+}
+
+.footer {
+    background-color: #282c34;
 }
