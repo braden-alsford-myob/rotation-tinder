@@ -38,7 +38,7 @@ const App = () => {
         <div>
 {/*         <SiAwesomelists onClick={swipeButtonClicked} />
             <GiCrownedHeart onClick={listButtonClicked} />*/}
-            <BottomNavigation value={currentlySelected} onChange={handleChange} >
+            <BottomNavigation className={"navbar"} value={currentlySelected} onChange={handleChange} >
                 <BottomNavigationAction label="Search" value="search" icon={<RecentActorsIcon />} />
                 <BottomNavigationAction label="Shortlist" value="shortlist" icon={<FavoriteIcon />} />
             </BottomNavigation>
@@ -48,7 +48,7 @@ const App = () => {
     if (currentlySelected === "search") {
         return (
             <div>
-                <div>
+                <div className={"contentContainer"}>
                     <SwipeyBoi allTeams={allTeams}/>
                 </div>
                 {bottomNavigation}
@@ -59,7 +59,7 @@ const App = () => {
     else {
         return (
             <div>
-                <div>
+                <div className={"contentContainer"}>
                     <div> hosiahpisahsc </div>
                 </div>
                 {bottomNavigation}
