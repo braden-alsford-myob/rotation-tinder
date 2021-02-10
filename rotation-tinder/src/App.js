@@ -59,20 +59,20 @@ const App = () => {
         return (
             <div>
                 <div>
-                    <div> hosiahpisahsc </div>
+                    <ShortListView/>
                 </div>
                 {bottomNavigation}
             </div>
         );
     }
 
-  return (
-      <div>
-          <button className="button">Add team</button>
-          <SwipeyBoi allTeams={allTeams}/>
-          <ShortListView/>
-      </div>
-  );
+//   return (
+//       <div>
+//           <button className="button">Add team</button>
+//           <SwipeyBoi allTeams={allTeams}/>
+//           <ShortListView/>
+//       </div>
+//   );
 };
 
 export default App;
