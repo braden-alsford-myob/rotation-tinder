@@ -1,15 +1,26 @@
 import './App.css';
 import TeamCard from "./card";
-import { data } from "./dummyData";
+import React from "react";
 
 function ShortListView(props) {
-    return (
-        <div className="Short-list-page">
+    console.log(props.data);
+    if (props.data.length === 0) {
+        return (
+            <div>
+                <h1>No Teams Shortlisted... Yet.</h1>
+            </div>
+        )
+    }
+    else {
+        return (
+            <div className="Short-list-page">
                 { props.data.map((entryData) => {
                     return <TeamCard entry={entryData}/>;
                 }) }
-        </div>
-    );
+            </div>
+        );
+    }
+
 }
 
 export default ShortListView;

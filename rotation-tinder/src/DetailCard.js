@@ -1,10 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { useSpring, animated } from 'react-spring'
 import Divider from "@material-ui/core/Divider";
@@ -22,14 +20,10 @@ const useStyles = makeStyles({
     },
 });
 
-
-
 export default function DetailCard(prop) {
     const team = prop.team;
     const classes = useStyles();
-    //const team = props.team;
     const [props, set] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 2, tension: 350, friction: 40 } }))
-
 
     return (
         <animated.div
@@ -42,7 +36,7 @@ export default function DetailCard(prop) {
                     <CardMedia
                         className={classes.media}
                         image={team.image}
-                        title="Contemplative Reptile"
+                        title={team.teamName}
                     />
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="h2" style={{color: "black"}}>
