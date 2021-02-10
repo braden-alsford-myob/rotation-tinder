@@ -27,6 +27,7 @@ const SwipeyBoi = (props) => {
         if (direction == "right") {
             setConfetti(true);
             setConfetti(false);
+            props.addTeamCallback(team);
         }
     };
 
