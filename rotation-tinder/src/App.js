@@ -5,6 +5,9 @@ import {BottomNavigation, BottomNavigationAction} from "@material-ui/core";
 import RecentActorsIcon from '@material-ui/icons/RecentActors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import {data} from "./dummyData.js";
+import ShortListView from "./ShortListView";
+import {SiAwesomelists, GiCrownedHeart} from "react-icons/all";
+
 
 const App = () => {
 
@@ -27,7 +30,7 @@ const App = () => {
     }
 
     const bottomNavigation = (
-        <div>
+        <div className={"footer"}>
 {/*         <SiAwesomelists onClick={swipeButtonClicked} />
             <GiCrownedHeart onClick={listButtonClicked} />*/}
             <BottomNavigation className={"navbar"} value={currentlySelected} onChange={handleChange} >
@@ -39,7 +42,7 @@ const App = () => {
 
     if (currentlySelected === "search") {
         return (
-            <div>
+            <div className={"outer"}>
                 <div className={"contentContainer"}>
                     <SwipeyBoi allTeams={allTeams} addTeamCallback={addTeamToShortList}/>
                 </div>
@@ -52,14 +55,12 @@ const App = () => {
         return (
             <div>
                 <div className={"contentContainer"}>
-                    <div> hosiahpisahsc </div>
+                    <ShortListView />
                 </div>
                 {bottomNavigation}
             </div>
         );
     }
-
-
 };
 
 export default App;
