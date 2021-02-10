@@ -2,10 +2,10 @@ import './App.css';
 import TeamCard from "./card";
 import { data } from "./dummyData";
 
-function ShortListView() {
+function ShortListView(props) {
     return (
         <div className="Short-list-page">
-                { data.map((entryData) => {
+                { props.data.map((entryData) => {
                     return <TeamCard entry={entryData}/>;
                 }) }
         </div>
