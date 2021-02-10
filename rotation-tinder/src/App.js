@@ -20,19 +20,29 @@ const App = () => {
         setShortList(shortList => [...shortList, team]);
     };
 
+    const removeTeamfromTeamList = team => {
+        console.log(allTeams)
+        setAllTeams(allTeams => [...allTeams.filter(t => t.id !== team.id)]);
+        console.log(allTeams)
+    }
+
+    const resetTeamPosition = team => {
+        console.log(allTeams)
+        removeTeamfromTeamList(team)
+        setAllTeams(allTeams => [team, ...allTeams]);
+        console.log(allTeams)
+    }
+
     const [currentlySelected, setCurrentlySelected] = useState(
         "search"
     );
 
     const handleChange = (e, newValue) => {
         setCurrentlySelected(newValue)
-
     }
 
     const bottomNavigation = (
         <div className={"footer"}>
-{/*         <SiAwesomelists onClick={swipeButtonClicked} />
-            <GiCrownedHeart onClick={listButtonClicked} />*/}
             <BottomNavigation className={"navbar"} value={currentlySelected} onChange={handleChange} >
                 <BottomNavigationAction label="Search" value="search" icon={<RecentActorsIcon />} />
                 <BottomNavigationAction label="Shortlist" value="shortlist" icon={<FavoriteIcon />} />
@@ -44,7 +54,11 @@ const App = () => {
         return (
             <div className={"outer"}>
                 <div className={"contentContainer"}>
-                    <SwipeyBoi allTeams={allTeams} addTeamCallback={addTeamToShortList}/>
+                    <SwipeyBoi
+                        allTeams={allTeams}
+                        addTeamCallback={addTeamToShortList}
+                        removeTeamCallback={removeTeamfromTeamList}
+                        resetTeamPosition={resetTeamPosition}/>
                 </div>
                 {bottomNavigation}
             </div>
@@ -55,7 +69,7 @@ const App = () => {
         return (
             <div>
                 <div className={"contentContainer"}>
-                    <ShortListView />
+                    <ShortListView data={shortList}/>
                 </div>
                 {bottomNavigation}
             </div>

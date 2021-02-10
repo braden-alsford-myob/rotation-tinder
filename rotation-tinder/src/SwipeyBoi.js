@@ -28,6 +28,10 @@ const SwipeyBoi = (props) => {
             setConfetti(true);
             setConfetti(false);
             props.addTeamCallback(team);
+            props.removeTeamCallback(team);
+        }
+        if (direction == "left") {
+            props.resetTeamPosition(team);
         }
     };
 
@@ -47,7 +51,7 @@ const SwipeyBoi = (props) => {
                 {props.allTeams.map((team) =>
                     <TinderCard preventSwipe={['up', 'down']} className='swipe' key={team.teamName} onSwipe={(dir) => swiped(dir, team)} onCardLeftScreen={() => outOfFrame(team.teamName)}>
                         <div style={{ backgroundImage: 'url(' + team.image + ')' }} className='card'>
-                            <h3>{team.teamName}</h3>
+                            <h3 style={{color: "black"}}>{team.teamName}</h3>
                         </div>
                     </TinderCard>
                 )}
