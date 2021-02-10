@@ -1,7 +1,7 @@
 import './App.css';
 import React, {useState} from 'react';
 import SwipeyBoi from "./SwipeyBoi";
-import {BottomNavigation, BottomNavigationAction} from "@material-ui/core";
+import {Badge, BottomNavigation, BottomNavigationAction} from "@material-ui/core";
 import RecentActorsIcon from '@material-ui/icons/RecentActors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import {data} from "./dummyData.js";
@@ -45,7 +45,7 @@ const App = () => {
         <div className={"footer"}>
             <BottomNavigation className={"navbar"} value={currentlySelected} onChange={handleChange} >
                 <BottomNavigationAction label="Search" value="search" icon={<RecentActorsIcon />} />
-                <BottomNavigationAction label="Shortlist" value="shortlist" icon={<FavoriteIcon />} />
+                <BottomNavigationAction label="Shortlist" value="shortlist" icon={<Badge badgeContent={shortList.length} color="primary"><FavoriteIcon /></Badge>} />
             </BottomNavigation>
         </div>
     );
