@@ -7,14 +7,12 @@ button {
     border-radius: 20px;
     position: fixed;
     bottom: 10px;
-    width: 60%;
-    left: 19%;
+    width: 35%;
+    left: 31%;
 }
 
 .contentContainer {
-    border: 10px solid pink;
-    border-radius: 20px;
-    height: calc(100vh - 113px);
+    /*height: calc(100vh - 113px);*/
     width: 60%;
     display: block;
     margin-left: auto;
