@@ -1,28 +1,24 @@
 import './App.css';
 import React, {useState} from 'react';
 import SwipeyBoi from "./SwipeyBoi";
-import ShortListView from "./ShortListView";
-import {SiAwesomelists, GiCrownedHeart} from "react-icons/all";
 import {BottomNavigation, BottomNavigationAction} from "@material-ui/core";
 import RecentActorsIcon from '@material-ui/icons/RecentActors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
+import {data} from "./dummyData.js";
+import ShortListView from "./ShortListView";
+import {SiAwesomelists, GiCrownedHeart} from "react-icons/all";
+
 
 const App = () => {
 
 
-    const [allTeams, setAllTeams] = useState([
-        {
-            name: "Leah"
-        },
-        {
-            name: "Braden"
-        }
-        ]
-    );
+    const [allTeams, setAllTeams] = useState(data);
 
-    const [shortList, setShortList] = useState(
-        []
-    );
+    const [shortList, setShortList] = useState([]);
+
+    const addTeamToShortList = team => {
+        setShortList(shortList => [...shortList, team]);
+    };
 
     const [currentlySelected, setCurrentlySelected] = useState(
         "search"
@@ -48,7 +44,7 @@ const App = () => {
         return (
             <div className={"outer"}>
                 <div className={"contentContainer"}>
-                    <SwipeyBoi allTeams={allTeams}/>
+                    <SwipeyBoi allTeams={allTeams} addTeamCallback={addTeamToShortList}/>
                 </div>
                 {bottomNavigation}
             </div>

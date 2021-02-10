@@ -69,6 +69,16 @@ button {
     border-radius: 20px;
     position: fixed;
     bottom: 10px;
+    /*width: 35%;
+    left: 31%;*/
+}
+
+.contentContainer {
+    /*height: calc(100vh - 113px);*/
+    /*width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;*/
     width: 60%;
     margin-left: auto;
     margin-right: auto;
