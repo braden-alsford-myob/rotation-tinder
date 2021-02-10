@@ -4,12 +4,10 @@ import { data } from "./dummyData";
 
 function ShortListView() {
     return (
-        <div className="App">
-            <header className="App-header">
+        <div className="Short-list-page">
                 { data.map((entryData) => {
                     return <TeamCard entry={entryData}/>;
                 }) }
-            </header>
         </div>
     );
 }

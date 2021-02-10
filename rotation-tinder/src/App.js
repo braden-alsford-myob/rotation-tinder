@@ -34,7 +34,7 @@ const App = () => {
     }
 
     const bottomNavigation = (
-        <div>
+        <div className={"footer"}>
 {/*         <SiAwesomelists onClick={swipeButtonClicked} />
             <GiCrownedHeart onClick={listButtonClicked} />*/}
             <BottomNavigation className={"navbar"} value={currentlySelected} onChange={handleChange} >
@@ -46,7 +46,7 @@ const App = () => {
 
     if (currentlySelected === "search") {
         return (
-            <div>
+            <div className={"outer"}>
                 <div className={"contentContainer"}>
                     <SwipeyBoi allTeams={allTeams}/>
                 </div>
@@ -58,15 +58,13 @@ const App = () => {
     else {
         return (
             <div>
-                <div>
-                    <ShortListView/>
+                <div className={"contentContainer"}>
+                    <ShortListView />
                 </div>
                 {bottomNavigation}
             </div>
         );
     }
-
-
 };
 
 export default App;
