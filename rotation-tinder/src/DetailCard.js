@@ -43,7 +43,7 @@ export default function DetailCard(prop) {
                             {team.teamName}
                         </Typography>
                         <Chip label={"Location: " + team.location} variant="outlined" color="primary" style={{margin: "5px"}}/>
-                        <Chip label={"Stack: " + team.stack} variant="outlined" color="primary" style={{margin: "5px"}}/>
+                        <Chip label={"Stack: " + team.stack.join(', ')} variant="outlined" color="primary" style={{margin: "5px"}}/>
                         <Chip label={"Product: " + team.product} variant="outlined" color="primary" style={{margin: "5px"}}/>
                         <Divider style={{margin: "5px"}}/>
                         <Typography variant="body1" color="textSecondary" component="p">

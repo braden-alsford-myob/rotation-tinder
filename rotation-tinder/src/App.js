@@ -51,18 +51,38 @@ const App = () => {
     );
 
     if (currentlySelected === "search") {
-        return (
-            <div className={"outer"}>
-                <div className={"contentContainer"}>
-                    <SwipeyBoi
-                        allTeams={allTeams}
-                        addTeamCallback={addTeamToShortList}
-                        removeTeamCallback={removeTeamfromTeamList}
-                        resetTeamPosition={resetTeamPosition}/>
+        if (allTeams.length !== 0) {
+            return (
+                <div className={"outer"}>
+                    <div className={"contentContainer"}>
+                        <link href='https://fonts.googleapis.com/css?family=Damion&display=swap' rel='stylesheet' />
+                        <link href='https://fonts.googleapis.com/css?family=Alatsi&display=swap' rel='stylesheet' />
+
+                        <h1>Team Cupid presents: FMA Rotation Tinder</h1>
+                        <SwipeyBoi
+                            allTeams={allTeams}
+                            addTeamCallback={addTeamToShortList}
+                            removeTeamCallback={removeTeamfromTeamList}
+                            resetTeamPosition={resetTeamPosition}/>
+                    </div>
+                    {bottomNavigation}
                 </div>
-                {bottomNavigation}
-            </div>
-        );
+            );
+        }
+        else {
+            return (
+                <div className={"outer"}>
+                    <div className={"contentContainer"}>
+                        <link href='https://fonts.googleapis.com/css?family=Damion&display=swap' rel='stylesheet' />
+                        <link href='https://fonts.googleapis.com/css?family=Alatsi&display=swap' rel='stylesheet' />
+
+                        <h1>Bianca presents: FMA Rotation Tinder</h1>
+                        <h2>No Teams!</h2>
+                    </div>
+                    {bottomNavigation}
+                </div>
+            );
+        }
     }
 
     else {

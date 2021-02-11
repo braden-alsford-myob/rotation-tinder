@@ -11,15 +11,15 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { data } from './dummyData';
 import EmailIcon from '@material-ui/icons/Email';
-import slack from './slack.svg';
+import Divider from "@material-ui/core/Divider";
 
 const useStyles = makeStyles((theme) => ({
     root: {
         maxWidth: 345,
         minWidth: 345,
         margin: 5,
+        borderRadius: 10,
     },
     media: {
         height: 0,
@@ -60,12 +60,15 @@ export default function TeamCard(props) {
                 image={entry.image}
                 title={entry.teamName}
             />
+            <CardContent>
+                <Typography variant="body2" color="textSecondary" component="p">
+                    Contact: {entry.contact.name}, {entry.contact.role}
+                </Typography>
+            </CardContent>
+            <Divider/>
             <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                    <EmailIcon />
-                </IconButton>
-                <IconButton aria-label="share">
-                    <img src={slack} className="slack-logo" alt="slack logo" />
+                <IconButton variant="link" href={"mailto:" + entry.contact.email} aria-label="email team contact">
+                    <EmailIcon/>
                 </IconButton>
                 <IconButton
                     className={clsx(classes.expand, {
@@ -81,7 +84,7 @@ export default function TeamCard(props) {
             <Collapse in={expanded} timeout="auto" unmountOnExit>
                 <CardContent>
                     <Typography paragraph>Product: {entry.product}</Typography>
-                    <Typography paragraph>Stack: {entry.stack.toString()}</Typography>
+                    <Typography paragraph>Stack: {entry.stack.join(', ')}</Typography>
                     <Typography paragraph>{entry.description}</Typography>
                 </CardContent>
             </Collapse>
