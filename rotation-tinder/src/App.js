@@ -6,7 +6,7 @@ import RecentActorsIcon from '@material-ui/icons/RecentActors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import {data} from "./dummyData.js";
 import ShortListView from "./ShortListView";
-import {SiAwesomelists, GiCrownedHeart} from "react-icons/all";
+import logo from "./Logo.svg";
 
 
 const App = () => {
@@ -53,12 +53,16 @@ const App = () => {
     if (currentlySelected === "search") {
         return (
             <div className={"outer"}>
-                <div className={"contentContainer"}>
-                    <SwipeyBoi
-                        allTeams={allTeams}
-                        addTeamCallback={addTeamToShortList}
-                        removeTeamCallback={removeTeamfromTeamList}
-                        resetTeamPosition={resetTeamPosition}/>
+
+              <div>
+                <h1>Rotation<img src={logo} className="logo" alt="logo" style={{ padding: '0 0.75em' }}/>Tinder</h1>
+              </div>
+              <div className={"contentContainer"}>
+                  <SwipeyBoi
+                      allTeams={allTeams}
+                      addTeamCallback={addTeamToShortList}
+                      removeTeamCallback={removeTeamfromTeamList}
+                      resetTeamPosition={resetTeamPosition}/>
                 </div>
                 {bottomNavigation}
             </div>
@@ -67,7 +71,10 @@ const App = () => {
 
     else {
         return (
-            <div>
+            <div className={"outer"}>
+                <div>
+                  <h1>Rotation<img src={logo} className="logo" alt="logo" style={{ padding: '0 0.75em' }}/>Tinder</h1>
+                </div>
                 <div className={"contentContainer"}>
                     <ShortListView data={shortList}/>
                 </div>

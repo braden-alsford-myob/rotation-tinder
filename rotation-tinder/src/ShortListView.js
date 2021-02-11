@@ -1,6 +1,5 @@
 import './App.css';
 import TeamCard from "./card";
-import { data } from "./dummyData";
 
 function ShortListView(props) {
     return (
