@@ -4,14 +4,13 @@ import TinderCard from 'react-tinder-card'
 import Confetti from 'react-dom-confetti';
 import DetailCard from "./DetailCard";
 
-
 const SwipeyBoi = (props) => {
 
     const config = {
         angle: 90,
         spread: 360,
         startVelocity: 40,
-        elementCount: 500,
+        elementCount: 200,
         dragFriction: 0.12,
         duration: 3000,
         stagger: 0,

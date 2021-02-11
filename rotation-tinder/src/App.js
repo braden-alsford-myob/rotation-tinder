@@ -1,12 +1,12 @@
 import './App.css';
 import React, {useState} from 'react';
 import SwipeyBoi from "./SwipeyBoi";
-import {BottomNavigation, BottomNavigationAction} from "@material-ui/core";
+import {Badge, BottomNavigation, BottomNavigationAction} from "@material-ui/core";
 import RecentActorsIcon from '@material-ui/icons/RecentActors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import {data} from "./dummyData.js";
 import ShortListView from "./ShortListView";
-import {SiAwesomelists, GiCrownedHeart} from "react-icons/all";
+import logo from "./Logo.svg";
 
 
 const App = () => {
@@ -54,11 +54,12 @@ const App = () => {
         if (allTeams.length !== 0) {
             return (
                 <div className={"outer"}>
-                    <div className={"contentContainer"}>
+                    <div>
                         <link href='https://fonts.googleapis.com/css?family=Damion&display=swap' rel='stylesheet' />
                         <link href='https://fonts.googleapis.com/css?family=Alatsi&display=swap' rel='stylesheet' />
-
-                        <h1>Team Cupid presents: FMA Rotation Tinder</h1>
+                        <h1>Rotation<img src={logo} className="logo" alt="logo" style={{ padding: '0 0.75em' }}/>Tinder</h1>
+                    </div>
+                    <div className={"contentContainer"}>
                         <SwipeyBoi
                             allTeams={allTeams}
                             addTeamCallback={addTeamToShortList}
@@ -72,11 +73,12 @@ const App = () => {
         else {
             return (
                 <div className={"outer"}>
-                    <div className={"contentContainer"}>
+                    <div>
                         <link href='https://fonts.googleapis.com/css?family=Damion&display=swap' rel='stylesheet' />
                         <link href='https://fonts.googleapis.com/css?family=Alatsi&display=swap' rel='stylesheet' />
-
-                        <h1>Bianca presents: FMA Rotation Tinder</h1>
+                        <h1>Rotation<img src={logo} className="logo" alt="logo" style={{ padding: '0 0.75em' }}/>Tinder</h1>
+                    </div>
+                    <div className={"contentContainer"}>
                         <h2>No Teams!</h2>
                     </div>
                     {bottomNavigation}
@@ -87,7 +89,12 @@ const App = () => {
 
     else {
         return (
-            <div>
+            <div className={"outer"}>
+                <div>
+                    <link href='https://fonts.googleapis.com/css?family=Damion&display=swap' rel='stylesheet' />
+                    <link href='https://fonts.googleapis.com/css?family=Alatsi&display=swap' rel='stylesheet' />
+                    <h1>Rotation<img src={logo} className="logo" alt="logo" style={{ padding: '0 0.75em' }}/>Tinder</h1>
+                </div>
                 <div className={"contentContainer"}>
                     <ShortListView data={shortList}/>
                 </div>
