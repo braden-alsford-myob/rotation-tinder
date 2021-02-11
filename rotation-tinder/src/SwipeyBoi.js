@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import TinderCard from 'react-tinder-card'
 import Confetti from 'react-dom-confetti';
 import DetailCard from "./DetailCard";
+import logo from "./Logo.svg";
 
 
 const SwipeyBoi = (props) => {
@@ -45,7 +46,9 @@ const SwipeyBoi = (props) => {
             <link href='https://fonts.googleapis.com/css?family=Damion&display=swap' rel='stylesheet' />
             <link href='https://fonts.googleapis.com/css?family=Alatsi&display=swap' rel='stylesheet' />
 
-            <h1>Bianca presents: FMA Rotation Tinder</h1>
+            <div><h1>Rotation<img src={logo} className="logo" alt="logo" style={{ padding: '0 0.75em' }}/>Tinder</h1>
+            </div>
+
             <Confetti active={ confetti } config={ config }/>
 
             <div className='cardContainer'>
