@@ -45,35 +45,55 @@ const App = () => {
         <div className={"footer"}>
             <BottomNavigation className={"navbar"} value={currentlySelected} onChange={handleChange} >
                 <BottomNavigationAction label="Search" value="search" icon={<RecentActorsIcon />} />
-                <BottomNavigationAction label="Shortlist" value="shortlist" icon={<Badge badgeContent={shortList.length} color="primary"><FavoriteIcon /></Badge>} />
+                <BottomNavigationAction label="Shortlist" value="shortlist" icon={<FavoriteIcon />} />
             </BottomNavigation>
         </div>
     );
 
     if (currentlySelected === "search") {
-        return (
-            <div className={"outer"}>
-
-              <div>
-                <h1>Rotation<img src={logo} className="logo" alt="logo" style={{ padding: '0 0.75em' }}/>Tinder</h1>
-              </div>
-              <div className={"contentContainer"}>
-                  <SwipeyBoi
-                      allTeams={allTeams}
-                      addTeamCallback={addTeamToShortList}
-                      removeTeamCallback={removeTeamfromTeamList}
-                      resetTeamPosition={resetTeamPosition}/>
+        if (allTeams.length !== 0) {
+            return (
+                <div className={"outer"}>
+                    <div>
+                        <link href='https://fonts.googleapis.com/css?family=Damion&display=swap' rel='stylesheet' />
+                        <link href='https://fonts.googleapis.com/css?family=Alatsi&display=swap' rel='stylesheet' />
+                        <h1>Rotation<img src={logo} className="logo" alt="logo" style={{ padding: '0 0.75em' }}/>Tinder</h1>
+                    </div>
+                    <div className={"contentContainer"}>
+                        <SwipeyBoi
+                            allTeams={allTeams}
+                            addTeamCallback={addTeamToShortList}
+                            removeTeamCallback={removeTeamfromTeamList}
+                            resetTeamPosition={resetTeamPosition}/>
+                    </div>
+                    {bottomNavigation}
                 </div>
-                {bottomNavigation}
-            </div>
-        );
+            );
+        }
+        else {
+            return (
+                <div className={"outer"}>
+                    <div>
+                        <link href='https://fonts.googleapis.com/css?family=Damion&display=swap' rel='stylesheet' />
+                        <link href='https://fonts.googleapis.com/css?family=Alatsi&display=swap' rel='stylesheet' />
+                        <h1>Rotation<img src={logo} className="logo" alt="logo" style={{ padding: '0 0.75em' }}/>Tinder</h1>
+                    </div>
+                    <div className={"contentContainer"}>
+                        <h2>No Teams!</h2>
+                    </div>
+                    {bottomNavigation}
+                </div>
+            );
+        }
     }
 
     else {
         return (
             <div className={"outer"}>
                 <div>
-                  <h1>Rotation<img src={logo} className="logo" alt="logo" style={{ padding: '0 0.75em' }}/>Tinder</h1>
+                    <link href='https://fonts.googleapis.com/css?family=Damion&display=swap' rel='stylesheet' />
+                    <link href='https://fonts.googleapis.com/css?family=Alatsi&display=swap' rel='stylesheet' />
+                    <h1>Rotation<img src={logo} className="logo" alt="logo" style={{ padding: '0 0.75em' }}/>Tinder</h1>
                 </div>
                 <div className={"contentContainer"}>
                     <ShortListView data={shortList}/>

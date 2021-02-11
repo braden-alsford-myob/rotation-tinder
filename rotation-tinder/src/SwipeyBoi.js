@@ -41,17 +41,12 @@ const SwipeyBoi = (props) => {
 
     return (
         <div>
-            <link href='https://fonts.googleapis.com/css?family=Damion&display=swap' rel='stylesheet' />
-            <link href='https://fonts.googleapis.com/css?family=Alatsi&display=swap' rel='stylesheet' />
 
             <Confetti active={ confetti } config={ config }/>
 
             <div className='cardContainer'>
                 {props.allTeams.map((team) =>
                     <TinderCard preventSwipe={['up', 'down']} className='swipe' key={team.teamName} onSwipe={(dir) => swiped(dir, team)} onCardLeftScreen={() => outOfFrame(team.teamName)}>
-                        {/*<div style={{ backgroundImage: 'url(' + team.image + ')' }} className='card'>*/}
-                        {/*    <h3 style={{color: "black"}}>{team.teamName}</h3>*/}
-                        {/*</div>*/}
                         <DetailCard team={team} />
                     </TinderCard>
                 )}
