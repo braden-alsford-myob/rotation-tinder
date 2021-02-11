@@ -45,7 +45,7 @@ const App = () => {
         <div className={"footer"}>
             <BottomNavigation className={"navbar"} value={currentlySelected} onChange={handleChange} >
                 <BottomNavigationAction label="Search" value="search" icon={<RecentActorsIcon />} />
-                <BottomNavigationAction label="Shortlist" value="shortlist" icon={<FavoriteIcon />} />
+                <BottomNavigationAction label="Shortlist" value="shortlist" icon={<Badge badgeContent={shortList.length} color="primary"><FavoriteIcon /></Badge>} />
             </BottomNavigation>
         </div>
     );
